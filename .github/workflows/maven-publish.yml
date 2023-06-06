@@ -20,10 +20,10 @@ jobs:
     - name: build with maven
       run: mvn clean install
       
-    - name: Start Selenium Grid
-      run: |
-          wget -q -O selenium-server-standalone.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-          java -jar selenium-server-standalone.jar -role hub &
+   # - name: Start Selenium Grid
+   #   run: |
+    #      wget -q -O selenium-server-standalone.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+   #       java -jar selenium-server-standalone.jar -role hub &
 
     - name: Run Selenium tests
       run: mvn test
