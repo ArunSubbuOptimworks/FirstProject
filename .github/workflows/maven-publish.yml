@@ -5,4 +5,25 @@ name: Maven Package
 
 on:
   push:
-   
+    branches: [main]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 19
+      uses: actions/setup-java@v3
+      with:
+        java-version: '19.0.1'
+        distribution: 'temurin'
+        
+    - name: build with maven
+      run: mvn clean install
+      
+    - name: Start Selenium Grid
+      run: |
+          wget -q -O selenium-server-standalone.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+          java -jar selenium-server-standalone.jar -role hub &
+
+    - name: Run Selenium tests
+      run: mvn test
