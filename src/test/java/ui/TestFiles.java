@@ -39,7 +39,7 @@ public class TestFiles {
 		Search srh = new Search(driver);
 		srh.enterEmailAndPassword("arun.subramani@optimworks.com", "Simple@123");
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		Files.copy(file,new File("C:\\Users\\LENOVO\\Documents\\login.jpg"));
+		//-Files.copy(file,new File("C:\\Users\\LENOVO\\Documents\\login.jpg"));
 		srh.clickOnLoginButton();
 	}
 }
