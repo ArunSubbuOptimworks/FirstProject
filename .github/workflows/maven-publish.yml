@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env: 
+      username : ${{ secrets.usr_name}}
+      password : ${{ secrets.psd}}
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 19
