@@ -37,7 +37,8 @@ public class TestFiles {
 	@Test
 	public void loginOpertaion() throws IOException {
 		Search srh = new Search(driver);
-		srh.enterEmailAndPassword("arun.subramani@optimworks.com", "Simple@123");
+		//srh.enterEmailAndPassword("arun.subramani@optimworks.com", "Simple@123");
+		 srh.enterEmailAndPassword(System.getenv("username"),System.getenv("password"));
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		//-Files.copy(file,new File("C:\\Users\\LENOVO\\Documents\\login.jpg"));
 		srh.clickOnLoginButton();
